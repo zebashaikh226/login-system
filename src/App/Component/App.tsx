@@ -9,11 +9,10 @@ import Logout from '../../Login/Component/Logout';
 
 const history = createBrowserHistory();
 
-interface Props{
+interface Props {
 }
 
-interface State{
-
+interface State {
 }
 
 export default class App extends Component<Props, State>{
@@ -21,16 +20,16 @@ export default class App extends Component<Props, State>{
     render() {
         return (
             <>
-            <Router history={history}>
-                <Route path="*" render={() => <NavBar history = {history} /> } />
-            </Router>
-            <Router history = {history}>
-                <Switch>
-                    <Route path="/" exact={true} render= {()=><LoginPage history={history}/>} />
-                    <Route path="/dashboard" exact={true} render={() => <Dashboard />} />
-                    <Route path="/" exact={true} render={() =><Logout history={history}/>} />
-                </Switch>
-            </Router>
+                <Router history={history}>
+                    <Route path="*" render={() => <NavBar history={history} />} />
+                </Router>
+                <Router history={history}>
+                    <Switch>
+                        <Route path="/" exact={true} render={() => <LoginPage history={history} />} />
+                        <Route path="/dashboard" exact={true} render={() => <Dashboard />} />
+                        <Route path="/" exact={true} render={() => <Logout history={history} />} />
+                    </Switch>
+                </Router>
             </>
         )
     }
